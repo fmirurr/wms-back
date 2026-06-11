@@ -1,0 +1,1 @@
+CREATE INDEX "companies_active_idx" ON "companies" USING btree ("active");
