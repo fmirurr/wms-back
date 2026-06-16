@@ -1,6 +1,7 @@
 import { Body, Controller, Get, Param, Patch, Post } from '@nestjs/common';
 import { PermissionService } from '../../application/permission.service';
 import { CreatePermissionHttpDto } from './dto/create-permission.dto';
+import { UpdatePermissionHttpDto } from './dto/update-permission.dto';
 
 @Controller('permission')
 export class PermissionController {
@@ -22,7 +23,7 @@ export class PermissionController {
   }
 
   @Patch(':id')
-  update(@Param('id') id: string, @Body() dto: CreatePermissionHttpDto) {
+  update(@Param('id') id: string, @Body() dto: UpdatePermissionHttpDto) {
     return this.permissionService.update(id, dto);
   }
 
